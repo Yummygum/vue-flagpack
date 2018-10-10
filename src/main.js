@@ -1,11 +1,10 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import './registerServiceWorker';
+import Vue from 'vue'
+import Flag from './Flag.vue'
 
-Vue.config.productionTip = false;
+Vue.component('Flag', Flag);
 
 new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app');
+  el: '#vue-flag-pack',
+})
+
+export default Flag;
