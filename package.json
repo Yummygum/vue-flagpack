@@ -22,7 +22,6 @@
     "url": "https://github.com/Yummygum/vue-flag-pack/issues"
   },
   "homepage": "https://github.com/Yummygum/vue-flag-pack/#readme",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
