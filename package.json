@@ -1,7 +1,7 @@
 {
   "name": "vue-flag-pack",
   "description": "A Vue flag pack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
   "repository": {
     "type": "git",
@@ -31,6 +31,9 @@
     "last 2 versions",
     "not ie <= 8"
   ],
+  "dependencies": {
+    "flag-pack-core": "^0.0.1"
+  },
   "devDependencies": {
     "vue": "2.5.11",
     "babel-core": "^6.26.0",
@@ -46,7 +49,6 @@
     "vue-loader": "13.0.5",
     "vue-template-compiler": "2.5.11",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1",
-    "flag-pack-core": "^0.0.1"
+    "webpack-dev-server": "^2.9.1"
   }
 }
