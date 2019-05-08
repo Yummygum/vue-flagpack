@@ -17,7 +17,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: 's',
+      default: 'l',
     },
     code: {
       type: String,
@@ -28,6 +28,7 @@ export default {
     },
     border: {
       type: Boolean,
+      default: true
     },
     borderRadius: {
       type: Boolean,
@@ -75,10 +76,6 @@ export default {
     }
   }
 
-  &.border {
-    border: 1px solid;
-  }
-
   &::before {
     content: '';
     width: 100%;
@@ -86,6 +83,19 @@ export default {
     position: absolute;
     display: block;
     mix-blend-mode: overlay;
+  }
+
+  &.border {
+    &::before {
+      border: 1px solid rgba(0, 0, 0, .2);
+      mix-blend-mode: overlay;
+    }
+  }
+
+  &.border-radius {
+    &::before {
+      border-radius: 1px;
+    }
   }
 
   &.top-down {
