@@ -1,12 +1,14 @@
 <template>
   <div
-    :class="`flag
-      size-${size}
-      ${dropshadow ? 'dropshadow' : ''}
-      ${border ? 'border' : ''}
-      ${borderRadius ? 'border-radius' : ''}
-      ${gradient}`"
-    :style="{borderRadius: customBorderRadius}">
+    :style="{borderRadius: customBorderRadius}"
+    :class="[
+      'flag',
+      `size-${size}`,
+      {dropshadow},
+      {border},
+      {borderRadius},
+      gradient,
+    ]">
     <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`">
   </div>
 </template>
@@ -43,7 +45,7 @@ export default {
       default: 'top-down',
     },
   },
-};
+}
 </script>
 
 <style scoped lang="scss">
