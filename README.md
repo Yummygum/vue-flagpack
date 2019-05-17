@@ -47,15 +47,15 @@ Use in your template:
 
 ## Available component options
 
-| key   | value   | required | default |
-|-------|-------|------|------|
-| size |  String | false | l |
-| code |  String | true | none |
-| dropshadow |  boolean | false | false |
-| border |  boolean | false | true |
-| borderRadius | boolean | false | true |
-| customBorderRadius |  String | false | - |
-| gradient |  String | false | 'top-down' |
+| key   | value   | required | default | format |
+|-------|-------|------|------|------|
+| size |  String | false | l | 's', 'm' or 'l' |
+| code |  String | true | none | see all codes |
+| dropshadow |  boolean | false | false | - |
+| hasBorder |  boolean | false | true | - |
+| hasBorderRadius | boolean | false | true | - |
+| customBorderRadius |  String | false | - | - |
+| gradient |  String | false | '' | 'top-down', 'real-linear' or 'real-circular' |
 
 
 
