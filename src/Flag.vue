@@ -4,9 +4,9 @@
     :class="[
       'flag',
       `size-${size}`,
+      {'border-radius': hasBorderRadius },
+      {'border': hasBorder },
       {dropshadow},
-      {border},
-      {borderRadius},
       gradient,
     ]">
     <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`">
@@ -33,7 +33,7 @@ export default {
       type: Boolean,
       default: false
     },
-    borderRadius: {
+    hasBorderRadius: {
       type: Boolean,
       default: true,
     },
@@ -108,7 +108,7 @@ export default {
     &::before {
       width: calc(100% - 2px);
       height: calc(100% - 2px);
-      border: 1px solid rgba(0, 0, 0, .2);
+      border: 1px solid rgba(0, 0, 0, .5);
       mix-blend-mode: overlay;
     }
   }
@@ -125,7 +125,7 @@ export default {
     }
   }
 
-  &.real-lineair {
+  &.real-linear {
     &::before {
       background-image: linear-gradient(45deg, rgba(0,0,0,0.20) 0%, rgba(39,39,39,0.22) 11%, rgba(255,255,255,0.30) 27%, rgba(0,0,0,0.24) 41%, rgba(0,0,0,0.55) 52%, rgba(255,255,255,0.26) 63%, rgba(0,0,0,0.27) 74%, rgba(255,255,255,0.30) 100%);
     }
