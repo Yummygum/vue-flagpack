@@ -7,7 +7,7 @@
       ${borderRadius ? 'border-radius' : ''}
       ${gradient}`"
     :style="{borderRadius: customBorderRadius}">
-    <img :src="`./node_modules/flag-pack-core/svg/${size}/${code}.svg`">
+    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size}/${code}.svg?sanitize=true`">
   </div>
 </template>
 
