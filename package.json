@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Yummygum/vue-flag-pack/#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "rm -rf dist && cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "rm -rf dist && rollup -c"
   },
   "browserslist": [
     "> 1%",

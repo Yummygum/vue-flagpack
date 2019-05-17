@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 //
 //
 //
@@ -257,5 +253,5 @@ var main = {
   }
 };
 
-exports.Flag = Flag;
-exports.default = main;
+export default main;
+export { Flag };

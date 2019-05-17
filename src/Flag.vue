@@ -7,7 +7,7 @@
       ${borderRadius ? 'border-radius' : ''}
       ${gradient}`"
     :style="{borderRadius: customBorderRadius}">
-    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size}/${code}.svg?sanitize=true`">
+    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`">
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
     },
     dropshadow: {
       type: Boolean,
+      default: false
     },
     border: {
       type: Boolean,
