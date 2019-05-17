@@ -1,7 +1,10 @@
 import Flag from './Flag.vue'
 
+
+export { Flag }
+
 export default {
-  install(Vue, options) {
-    Vue.component('vue-flag-pack', Flag)
+  install: function install(Vue, options) {
+    Vue.component(options.name || 'vue-flag-pack', Flag)
   }
 }
