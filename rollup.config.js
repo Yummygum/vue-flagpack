@@ -15,6 +15,11 @@ export default {
     {
       file: 'dist/vue-flag-rollup.esm.js',
       format: 'esm'
+    },
+    {
+      file: 'dist/vue-flag-rollup.iife.js',
+      format: 'iife',
+      name: 'Flag'
     }
   ]
 }
