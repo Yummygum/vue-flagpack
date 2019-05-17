@@ -16,6 +16,13 @@ import Flag from 'vue-flag-pack'
 Vue.use(Flag, options)
 ```
 
+Use in your template:
+```html
+<template>
+  <vue-flag-pack code="NL" />
+</template>
+```
+
 Or import straight away
 ```js
 import Flag from 'vue-flag-pack'
@@ -30,12 +37,22 @@ Vue.component('example', {
 })
 ```
 
-Use in your template:
+Or use via UNPKG network
 ```html
-<template>
-  <vue-flag-pack code="NL" />
-</template>
+<script src="https://unpkg.com/vue-flag-pack@0.2.1/dist/vue-flag-rollup.iife.js"></script>
+<script>
+const instance = new Vue({
+  el: '#app',
+  components: {
+    'Flag': Flag.Flag
+  },
+})
+
+// or
+instance.use(Flag)
+</script>
 ```
+
 
 ## Available plugin options
 
