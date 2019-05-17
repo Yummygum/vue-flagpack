@@ -29,7 +29,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "rm -rf dist && rollup -c",
     "test": "echo 'tests here'",
-    "prepublish": "npm test",
+    "prepublish": "npm test && npm version patch",
     "publish": "npm run build && git add -A dist",
     "postpublish": "git push && git push --tags"
   },
