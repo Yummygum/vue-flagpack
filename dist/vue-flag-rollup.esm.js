@@ -11,6 +11,8 @@
 //
 //
 //
+//
+//
 
 var script = {
   name: 'Flag',
@@ -25,12 +27,13 @@ var script = {
     },
     dropshadow: {
       type: Boolean,
+      default: false
     },
-    border: {
+    hasBorder: {
       type: Boolean,
-      default: true
+      default: false
     },
-    borderRadius: {
+    hasBorderRadius: {
       type: Boolean,
       default: true,
     },
@@ -39,7 +42,7 @@ var script = {
     },
     gradient: {
       type: String,
-      default: 'top-down',
+      default: '',
     },
   },
 };
@@ -190,17 +193,14 @@ var __vue_render__ = function() {
   return _c(
     "div",
     {
-      class:
-        "flag\n    size-" +
-        _vm.size +
-        "\n    " +
-        (_vm.dropshadow ? "dropshadow" : "") +
-        "\n    " +
-        (_vm.border ? "border" : "") +
-        "\n    " +
-        (_vm.borderRadius ? "border-radius" : "") +
-        "\n    " +
-        _vm.gradient,
+      class: [
+        "flag",
+        "size-" + _vm.size,
+        { "border-radius": _vm.hasBorderRadius },
+        { border: _vm.hasBorder },
+        { dropshadow: _vm.dropshadow },
+        _vm.gradient
+      ],
       style: { borderRadius: _vm.customBorderRadius }
     },
     [
@@ -208,9 +208,9 @@ var __vue_render__ = function() {
         attrs: {
           src:
             "https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/" +
-            _vm.size +
+            _vm.size.toLowerCase() +
             "/" +
-            _vm.code +
+            _vm.code.toUpperCase() +
             ".svg?sanitize=true"
         }
       })
@@ -223,11 +223,11 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-3888addd_0", { source: ".flag[data-v-3888addd] {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.flag.size-s[data-v-3888addd] {\n  width: 16px;\n  height: 12px;\n}\n.flag.size-s.dropshadow[data-v-3888addd] {\n  box-shadow: 0 0 1px 0.5px rgba(0, 0, 0, 0.1);\n}\n.flag.size-s.border-radius[data-v-3888addd] {\n  border-radius: 1px;\n}\n.flag.size-m.dropshadow[data-v-3888addd] {\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n}\n.flag.size-m.border-radius[data-v-3888addd] {\n  border-radius: 1.5px;\n}\n.flag[data-v-3888addd]::before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  display: block;\n  mix-blend-mode: overlay;\n}\n.flag.border[data-v-3888addd]::before {\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  mix-blend-mode: overlay;\n}\n.flag.border-radius[data-v-3888addd]::before {\n  border-radius: 1px;\n}\n.flag.top-down[data-v-3888addd]::before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 2%, rgba(255, 255, 255, 0.7) 100%);\n}\n.flag img[data-v-3888addd] {\n  display: block;\n}\n\n/*# sourceMappingURL=Flag.vue.map */", map: {"version":3,"sources":["/Users/noudadrichem/code/yummygum/vue-flag-pack/src/Flag.vue","Flag.vue"],"names":[],"mappings":"AAgDA;EACA,qBAAA;EACA,gBAAA;EACA,kBAAA;AC/CA;ADkDA;EACA,WAAA;EACA,YAAA;AChDA;ADkDA;EACA,4CAAA;AChDA;ADmDA;EACA,kBAAA;ACjDA;ADsDA;EACA,0CAAA;ACpDA;ADuDA;EACA,oBAAA;ACrDA;AD0DA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,cAAA;EACA,uBAAA;ACxDA;AD4DA;EACA,oCAAA;EACA,uBAAA;AC1DA;AD+DA;EACA,kBAAA;AC7DA;ADkEA;EACA,6FAAA;AChEA;ADoEA;EACA,cAAA;AClEA;;AAEA,mCAAmC","file":"Flag.vue","sourcesContent":["<template>\n  <div\n    :class=\"`flag\n      size-${size}\n      ${dropshadow ? 'dropshadow' : ''}\n      ${border ? 'border' : ''}\n      ${borderRadius ? 'border-radius' : ''}\n      ${gradient}`\"\n    :style=\"{borderRadius: customBorderRadius}\">\n    <img :src=\"`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size}/${code}.svg?sanitize=true`\">\n  </div>\n</template>\n\n<script>\nexport default {\n  name: 'Flag',\n  props: {\n    size: {\n      type: String,\n      default: 'l',\n    },\n    code: {\n      type: String,\n      required: true,\n    },\n    dropshadow: {\n      type: Boolean,\n    },\n    border: {\n      type: Boolean,\n      default: true\n    },\n    borderRadius: {\n      type: Boolean,\n      default: true,\n    },\n    customBorderRadius: {\n      type: String,\n    },\n    gradient: {\n      type: String,\n      default: 'top-down',\n    },\n  },\n};\n</script>\n\n<style scoped lang=\"scss\">\n.flag {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n\n  &.size {\n    &-s {\n      width: 16px;\n      height: 12px;\n\n      &.dropshadow {\n        box-shadow: 0 0 1px 0.5px rgba(0,0,0,0.10);\n      }\n\n      &.border-radius {\n        border-radius: 1px;\n      }\n    }\n\n    &-m {\n      &.dropshadow {\n        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.10);\n      }\n\n      &.border-radius {\n        border-radius: 1.5px;\n      }\n    }\n  }\n\n  &::before {\n    content: '';\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    display: block;\n    mix-blend-mode: overlay;\n  }\n\n  &.border {\n    &::before {\n      border: 1px solid rgba(0, 0, 0, .2);\n      mix-blend-mode: overlay;\n    }\n  }\n\n  &.border-radius {\n    &::before {\n      border-radius: 1px;\n    }\n  }\n\n  &.top-down {\n    &::before {\n      background-image: linear-gradient(0deg, rgba(0,0,0,0.30) 2%, rgba(255,255,255,0.70) 100%);\n    }\n  }\n\n  img {\n    display: block;\n  }\n}\n</style>\n",".flag {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.flag.size-s {\n  width: 16px;\n  height: 12px;\n}\n.flag.size-s.dropshadow {\n  box-shadow: 0 0 1px 0.5px rgba(0, 0, 0, 0.1);\n}\n.flag.size-s.border-radius {\n  border-radius: 1px;\n}\n.flag.size-m.dropshadow {\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n}\n.flag.size-m.border-radius {\n  border-radius: 1.5px;\n}\n.flag::before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  display: block;\n  mix-blend-mode: overlay;\n}\n.flag.border::before {\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  mix-blend-mode: overlay;\n}\n.flag.border-radius::before {\n  border-radius: 1px;\n}\n.flag.top-down::before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 2%, rgba(255, 255, 255, 0.7) 100%);\n}\n.flag img {\n  display: block;\n}\n\n/*# sourceMappingURL=Flag.vue.map */"]}, media: undefined });
+    inject("data-v-b85c51d0_0", { source: ".flag[data-v-b85c51d0] {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.flag.size-s[data-v-b85c51d0] {\n  width: 16px;\n  height: 12px;\n}\n.flag.size-s.dropshadow[data-v-b85c51d0] {\n  box-shadow: 0 0 1px 0.5px rgba(0, 0, 0, 0.1);\n}\n.flag.size-s.border-radius[data-v-b85c51d0] {\n  border-radius: 1px;\n}\n.flag.size-m[data-v-b85c51d0] {\n  width: 20px;\n  height: 15px;\n}\n.flag.size-m.dropshadow[data-v-b85c51d0] {\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n}\n.flag.size-m.border-radius[data-v-b85c51d0] {\n  border-radius: 1.5px;\n}\n.flag.size-l[data-v-b85c51d0] {\n  width: 32px;\n  height: 24px;\n}\n.flag.size-l.dropshadow[data-v-b85c51d0] {\n  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);\n}\n.flag.size-l.border-radius[data-v-b85c51d0] {\n  border-radius: 2px;\n}\n.flag[data-v-b85c51d0]::before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  display: block;\n  mix-blend-mode: overlay;\n}\n.flag.border[data-v-b85c51d0]::before {\n  width: calc(100% - 2px);\n  height: calc(100% - 2px);\n  border: 1px solid rgba(0, 0, 0, 0.5);\n  mix-blend-mode: overlay;\n}\n.flag.border-radius[data-v-b85c51d0]::before {\n  border-radius: 1px;\n}\n.flag.top-down[data-v-b85c51d0]::before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 2%, rgba(255, 255, 255, 0.7) 100%);\n}\n.flag.real-linear[data-v-b85c51d0]::before {\n  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0%, rgba(39, 39, 39, 0.22) 11%, rgba(255, 255, 255, 0.3) 27%, rgba(0, 0, 0, 0.24) 41%, rgba(0, 0, 0, 0.55) 52%, rgba(255, 255, 255, 0.26) 63%, rgba(0, 0, 0, 0.27) 74%, rgba(255, 255, 255, 0.3) 100%);\n}\n.flag.real-circular[data-v-b85c51d0]::before {\n  background: radial-gradient(50% 36%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.24) 11%, rgba(0, 0, 0, 0.55) 17%, rgba(255, 255, 255, 0.26) 22%, rgba(0, 0, 0, 0.17) 27%, rgba(255, 255, 255, 0.28) 31%, rgba(255, 255, 255, 0) 37%) center calc(50% - 8px)/600% 600%, radial-gradient(50% 123%, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.24) 48%, rgba(0, 0, 0, 0.55) 61%, rgba(255, 255, 255, 0.26) 72%, rgba(0, 0, 0, 0.17) 80%, rgba(255, 255, 255, 0.28) 88%, rgba(255, 255, 255, 0.3) 100%) center calc(50% - 8px)/600% 600%;\n}\n.flag img[data-v-b85c51d0] {\n  display: block;\n}\n\n/*# sourceMappingURL=Flag.vue.map */", map: {"version":3,"sources":["/Users/noudadrichem/code/yummygum/vue-flag-pack/src/Flag.vue","Flag.vue"],"names":[],"mappings":"AAmDA;EACA,qBAAA;EACA,gBAAA;EACA,kBAAA;AClDA;ADqDA;EACA,WAAA;EACA,YAAA;ACnDA;ADqDA;EACA,4CAAA;ACnDA;ADsDA;EACA,kBAAA;ACpDA;ADwDA;EACA,WAAA;EACA,YAAA;ACtDA;ADwDA;EACA,0CAAA;ACtDA;ADyDA;EACA,oBAAA;ACvDA;AD2DA;EACA,WAAA;EACA,YAAA;ACzDA;AD2DA;EACA,0CAAA;ACzDA;AD4DA;EACA,kBAAA;AC1DA;AD+DA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,cAAA;EACA,uBAAA;AC7DA;ADiEA;EACA,uBAAA;EACA,wBAAA;EACA,oCAAA;EACA,uBAAA;AC/DA;ADoEA;EACA,kBAAA;AClEA;ADuEA;EACA,6FAAA;ACrEA;AD0EA;EACA,kQAAA;ACxEA;AD6EA;EACA,ygBAAA;AC3EA;ADgFA;EACA,cAAA;AC9EA;;AAEA,mCAAmC","file":"Flag.vue","sourcesContent":["<template>\n  <div\n    :style=\"{borderRadius: customBorderRadius}\"\n    :class=\"[\n      'flag',\n      `size-${size}`,\n      {'border-radius': hasBorderRadius },\n      {'border': hasBorder },\n      {dropshadow},\n      gradient,\n    ]\">\n    <img :src=\"`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`\">\n  </div>\n</template>\n\n<script>\nexport default {\n  name: 'Flag',\n  props: {\n    size: {\n      type: String,\n      default: 'l',\n    },\n    code: {\n      type: String,\n      required: true,\n    },\n    dropshadow: {\n      type: Boolean,\n      default: false\n    },\n    hasBorder: {\n      type: Boolean,\n      default: false\n    },\n    hasBorderRadius: {\n      type: Boolean,\n      default: true,\n    },\n    customBorderRadius: {\n      type: String,\n    },\n    gradient: {\n      type: String,\n      default: '',\n    },\n  },\n}\n</script>\n\n<style scoped lang=\"scss\">\n.flag {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n\n  &.size {\n    &-s {\n      width: 16px;\n      height: 12px;\n\n      &.dropshadow {\n        box-shadow: 0 0 1px 0.5px rgba(0,0,0,0.10);\n      }\n\n      &.border-radius {\n        border-radius: 1px;\n      }\n    }\n\n    &-m {\n      width: 20px;\n      height: 15px;\n\n      &.dropshadow {\n        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.10);\n      }\n\n      &.border-radius {\n        border-radius: 1.5px;\n      }\n    }\n\n    &-l {\n      width: 32px;\n      height: 24px;\n\n      &.dropshadow {\n        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);\n      }\n\n      &.border-radius {\n        border-radius: 2px;\n      }\n    }\n  }\n\n  &::before {\n    content: '';\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    display: block;\n    mix-blend-mode: overlay;\n  }\n\n  &.border {\n    &::before {\n      width: calc(100% - 2px);\n      height: calc(100% - 2px);\n      border: 1px solid rgba(0, 0, 0, .5);\n      mix-blend-mode: overlay;\n    }\n  }\n\n  &.border-radius {\n    &::before {\n      border-radius: 1px;\n    }\n  }\n\n  &.top-down {\n    &::before {\n      background-image: linear-gradient(0deg, rgba(0,0,0,0.30) 2%, rgba(255,255,255,0.70) 100%);\n    }\n  }\n\n  &.real-linear {\n    &::before {\n      background-image: linear-gradient(45deg, rgba(0,0,0,0.20) 0%, rgba(39,39,39,0.22) 11%, rgba(255,255,255,0.30) 27%, rgba(0,0,0,0.24) 41%, rgba(0,0,0,0.55) 52%, rgba(255,255,255,0.26) 63%, rgba(0,0,0,0.27) 74%, rgba(255,255,255,0.30) 100%);\n    }\n  }\n\n  &.real-circular {\n    &::before {\n      background: radial-gradient(50% 36%, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.24) 11%, rgba(0,0,0,0.55) 17%, rgba(255,255,255,0.26) 22%, rgba(0,0,0,0.17) 27%, rgba(255,255,255,0.28) 31%, rgba(255,255,255,0.00) 37%) center calc(50% - 8px) / 600% 600%,\n                  radial-gradient(50% 123%, rgba(255,255,255,0.30) 25%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.55) 61%, rgba(255,255,255,0.26) 72%, rgba(0,0,0,0.17) 80%, rgba(255,255,255,0.28) 88%, rgba(255,255,255,0.30) 100%) center calc(50% - 8px) / 600% 600%;\n    }\n  }\n\n  img {\n    display: block;\n  }\n}\n</style>\n",".flag {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.flag.size-s {\n  width: 16px;\n  height: 12px;\n}\n.flag.size-s.dropshadow {\n  box-shadow: 0 0 1px 0.5px rgba(0, 0, 0, 0.1);\n}\n.flag.size-s.border-radius {\n  border-radius: 1px;\n}\n.flag.size-m {\n  width: 20px;\n  height: 15px;\n}\n.flag.size-m.dropshadow {\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);\n}\n.flag.size-m.border-radius {\n  border-radius: 1.5px;\n}\n.flag.size-l {\n  width: 32px;\n  height: 24px;\n}\n.flag.size-l.dropshadow {\n  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);\n}\n.flag.size-l.border-radius {\n  border-radius: 2px;\n}\n.flag::before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  display: block;\n  mix-blend-mode: overlay;\n}\n.flag.border::before {\n  width: calc(100% - 2px);\n  height: calc(100% - 2px);\n  border: 1px solid rgba(0, 0, 0, 0.5);\n  mix-blend-mode: overlay;\n}\n.flag.border-radius::before {\n  border-radius: 1px;\n}\n.flag.top-down::before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 2%, rgba(255, 255, 255, 0.7) 100%);\n}\n.flag.real-linear::before {\n  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0%, rgba(39, 39, 39, 0.22) 11%, rgba(255, 255, 255, 0.3) 27%, rgba(0, 0, 0, 0.24) 41%, rgba(0, 0, 0, 0.55) 52%, rgba(255, 255, 255, 0.26) 63%, rgba(0, 0, 0, 0.27) 74%, rgba(255, 255, 255, 0.3) 100%);\n}\n.flag.real-circular::before {\n  background: radial-gradient(50% 36%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.24) 11%, rgba(0, 0, 0, 0.55) 17%, rgba(255, 255, 255, 0.26) 22%, rgba(0, 0, 0, 0.17) 27%, rgba(255, 255, 255, 0.28) 31%, rgba(255, 255, 255, 0) 37%) center calc(50% - 8px)/600% 600%, radial-gradient(50% 123%, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.24) 48%, rgba(0, 0, 0, 0.55) 61%, rgba(255, 255, 255, 0.26) 72%, rgba(0, 0, 0, 0.17) 80%, rgba(255, 255, 255, 0.28) 88%, rgba(255, 255, 255, 0.3) 100%) center calc(50% - 8px)/600% 600%;\n}\n.flag img {\n  display: block;\n}\n\n/*# sourceMappingURL=Flag.vue.map */"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__ = "data-v-3888addd";
+  const __vue_scope_id__ = "data-v-b85c51d0";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
