@@ -29,9 +29,9 @@ export default {
       type: Boolean,
       default: false
     },
-    border: {
+    hasBorder: {
       type: Boolean,
-      default: true
+      default: false
     },
     borderRadius: {
       type: Boolean,
@@ -42,7 +42,7 @@ export default {
     },
     gradient: {
       type: String,
-      default: 'top-down',
+      default: '',
     },
   },
 }
@@ -69,12 +69,28 @@ export default {
     }
 
     &-m {
+      width: 20px;
+      height: 15px;
+
       &.dropshadow {
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.10);
       }
 
       &.border-radius {
         border-radius: 1.5px;
+      }
+    }
+
+    &-l {
+      width: 32px;
+      height: 24px;
+
+      &.dropshadow {
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
+      }
+
+      &.border-radius {
+        border-radius: 2px;
       }
     }
   }
@@ -90,6 +106,8 @@ export default {
 
   &.border {
     &::before {
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
       border: 1px solid rgba(0, 0, 0, .2);
       mix-blend-mode: overlay;
     }
@@ -104,6 +122,19 @@ export default {
   &.top-down {
     &::before {
       background-image: linear-gradient(0deg, rgba(0,0,0,0.30) 2%, rgba(255,255,255,0.70) 100%);
+    }
+  }
+
+  &.real-lineair {
+    &::before {
+      background-image: linear-gradient(45deg, rgba(0,0,0,0.20) 0%, rgba(39,39,39,0.22) 11%, rgba(255,255,255,0.30) 27%, rgba(0,0,0,0.24) 41%, rgba(0,0,0,0.55) 52%, rgba(255,255,255,0.26) 63%, rgba(0,0,0,0.27) 74%, rgba(255,255,255,0.30) 100%);
+    }
+  }
+
+  &.real-circular {
+    &::before {
+      background: radial-gradient(50% 36%, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.24) 11%, rgba(0,0,0,0.55) 17%, rgba(255,255,255,0.26) 22%, rgba(0,0,0,0.17) 27%, rgba(255,255,255,0.28) 31%, rgba(255,255,255,0.00) 37%) center calc(50% - 8px) / 600% 600%,
+                  radial-gradient(50% 123%, rgba(255,255,255,0.30) 25%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.55) 61%, rgba(255,255,255,0.26) 72%, rgba(0,0,0,0.17) 80%, rgba(255,255,255,0.28) 88%, rgba(255,255,255,0.30) 100%) center calc(50% - 8px) / 600% 600%;
     }
   }
 
