@@ -8,6 +8,7 @@
       {'border': hasBorder },
       {dropshadow},
       gradient,
+      className
     ]">
     <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`">
   </div>
@@ -44,6 +45,9 @@ export default {
       type: String,
       default: '',
     },
+    className: {
+      type: String
+    }
   },
 }
 </script>

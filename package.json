@@ -1,7 +1,7 @@
 {
   "name": "vue-flag-pack",
   "description": "A Vue flag pack",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
   "repository": {
     "type": "git",
@@ -27,7 +27,11 @@
   "homepage": "https://github.com/Yummygum/vue-flag-pack/#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "rm -rf dist && rollup -c"
+    "build": "rm -rf dist && rollup -c",
+    "test": "echo 'tests here'",
+    "prepublish": "npm test && npm version patch",
+    "publish": "npm run build && git add -A dist",
+    "postpublish": "git push && git push --tags"
   },
   "browserslist": [
     "> 1%",
