@@ -10,13 +10,20 @@
       gradient,
       className
     ]">
-    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`">
+    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${isoToCountryCodeLocal.toUpperCase()}.svg?sanitize=true`">
   </div>
 </template>
 
 <script>
+import { isoToCountryCode } from 'flag-pack-core'
+
 export default {
   name: 'Flag',
+  computed: {
+    isoToCountryCodeLocal() {
+      return isoToCountryCode(this.code)
+    }
+  },
   props: {
     size: {
       type: String,

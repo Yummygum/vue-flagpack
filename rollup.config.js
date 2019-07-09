@@ -3,6 +3,7 @@ import VuePlugin from 'rollup-plugin-vue'
 
 export default {
   input: 'src/main.js',
+  externals: ['vue', 'flag-pack-core'],
   plugins: [
     commonjs(),
     VuePlugin()
