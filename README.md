@@ -13,7 +13,9 @@ Use as a plugin
 ```js
 import Vue from 'vue'
 import Flag from 'vue-flag-pack'
-Vue.use(Flag, options)
+Vue.use(Flag, {
+  name: 'Flag'
+})
 ```
 
 Use in your template:
