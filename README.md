@@ -68,7 +68,7 @@ instance.use(Flag)
 
 | key   | value   | required | default | format |
 |-------|-------|------|------|------|
-| country code |  String | true | none | see all codes |
+| code |  String | true | none | see all codes |
 | size |  String | false | l | 's', 'm' or 'l' |
 | className |  String | false | - | - |
 | dropshadow |  boolean | false | false | - |
