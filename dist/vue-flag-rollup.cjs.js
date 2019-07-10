@@ -230,6 +230,7 @@ __vue_render__._withStripped = true;
   };
   /* scoped */
   const __vue_scope_id__ = "data-v-5762f742";
+
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
