@@ -27,11 +27,12 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'l',
+      default: 'm',
     },
     code: {
       type: String,
       required: true,
+      default: '528'
     },
     dropshadow: {
       type: Boolean,
