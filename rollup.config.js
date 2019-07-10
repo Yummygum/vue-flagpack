@@ -3,6 +3,7 @@ import VuePlugin from 'rollup-plugin-vue'
 
 export default {
   input: 'src/main.js',
+  externals: ['vue', 'flag-pack-core'],
   plugins: [
     commonjs(),
     VuePlugin()
@@ -15,6 +16,11 @@ export default {
     {
       file: 'dist/vue-flag-rollup.esm.js',
       format: 'esm'
+    },
+    {
+      file: 'dist/vue-flag-rollup.iife.js',
+      format: 'iife',
+      name: 'Flag'
     }
   ]
 }

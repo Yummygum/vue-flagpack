@@ -8,22 +8,31 @@
       {'border': hasBorder },
       {dropshadow},
       gradient,
+      className
     ]">
-    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${code.toUpperCase()}.svg?sanitize=true`">
+    <img :src="`https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/${size.toLowerCase()}/${isoToCountryCodeLocal.toUpperCase()}.svg?sanitize=true`">
   </div>
 </template>
 
 <script>
+import { isoToCountryCode } from 'flag-pack-core'
+
 export default {
   name: 'Flag',
+  computed: {
+    isoToCountryCodeLocal() {
+      return isoToCountryCode(this.code)
+    }
+  },
   props: {
     size: {
       type: String,
-      default: 'l',
+      default: 'm',
     },
     code: {
       type: String,
       required: true,
+      default: '528'
     },
     dropshadow: {
       type: Boolean,
@@ -44,6 +53,9 @@ export default {
       type: String,
       default: '',
     },
+    className: {
+      type: String
+    }
   },
 }
 </script>
