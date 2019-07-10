@@ -25,9 +25,9 @@ Use in your template:
 
 Or import straight away
 ```js
-import Flag from 'vue-flag-pack'
+import { Flag } from 'vue-flag-pack'
 
-Vue.component('example', {
+Vue.component('flag-nl', {
   components: {
     Flag
   },
