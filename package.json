@@ -62,6 +62,16 @@
       "name": "Noud Adrichem",
       "social": "@noudadrichem",
       "url": "https://noudadrichem.com"
+    },
+    {
+      "name": "Donovan Roubos",
+      "social": "@donovanroubos",
+      "url": "https://donovanroubos.nl"
+    },
+    {
+      "name": "Yummygum",
+      "social": "@yummygum",
+      "url": "https://yummygum.com"
     }
   ],
   "dependencies": {
