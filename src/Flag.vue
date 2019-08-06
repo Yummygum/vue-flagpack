@@ -27,7 +27,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'm',
+      default: 'l',
     },
     code: {
       type: String,
@@ -40,7 +40,7 @@ export default {
     },
     hasBorder: {
       type: Boolean,
-      default: false
+      default: true
     },
     hasBorderRadius: {
       type: Boolean,
