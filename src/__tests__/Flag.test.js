@@ -221,7 +221,7 @@ describe('Test the different props', () => {
       'border-radius',
       'border'
     ])
-    expect(component.attributes('style')).toBe("border-radius: '10px'")
+    expect(component.attributes('style')).toBe("border-radius: 10px;")
   })
 
   test('Should render a large Italian flag with no border radius.', () => {

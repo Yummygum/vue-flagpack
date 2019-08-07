@@ -2,17 +2,17 @@
 
 exports[`Component with no flag code given along. 1`] = `
 <div
-  class="flag size-m border-radius"
+  class="flag size-l border-radius border"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/NL.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/NL.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test different flag sizes Should render a large dutch flag 1`] = `
 <div
-  class="flag size-l border-radius"
+  class="flag size-l border-radius border"
 >
   <img
     src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/NL.svg?sanitize=true"
@@ -22,7 +22,7 @@ exports[`Test different flag sizes Should render a large dutch flag 1`] = `
 
 exports[`Test different flag sizes Should render a medium dutch flag 1`] = `
 <div
-  class="flag size-m border-radius"
+  class="flag size-m border-radius border"
 >
   <img
     src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/NL.svg?sanitize=true"
@@ -32,7 +32,7 @@ exports[`Test different flag sizes Should render a medium dutch flag 1`] = `
 
 exports[`Test different flag sizes Should render a small dutch flag 1`] = `
 <div
-  class="flag size-s border-radius"
+  class="flag size-s border-radius border"
 >
   <img
     src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/s/NL.svg?sanitize=true"
@@ -42,101 +42,101 @@ exports[`Test different flag sizes Should render a small dutch flag 1`] = `
 
 exports[`Test different flag sizes Test default size (should be large) 1`] = `
 <div
-  class="flag size-m border-radius"
+  class="flag size-l border-radius border"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/NL.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/NL.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Belgium flag with a real-circular gradient 1`] = `
 <div
-  class="flag size-m border-radius real-circular"
+  class="flag size-l border-radius border real-circular"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/BE.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/BE.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Belgium flag with a real-linear gradient 1`] = `
 <div
-  class="flag size-m border-radius real-linear"
+  class="flag size-l border-radius border real-linear"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/BE.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/BE.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Belgium flag with a top-down gradient 1`] = `
 <div
-  class="flag size-m border-radius top-down"
+  class="flag size-l border-radius border top-down"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/BE.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/BE.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Belgium flag without a border. 1`] = `
 <div
-  class="flag size-m border-radius"
+  class="flag size-l border-radius"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/BE.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/BE.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Italian flag with a 10px border radius. 1`] = `
 <div
-  class="flag size-m border-radius"
+  class="flag size-l border-radius border"
   style="border-radius: 10px;"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/IT.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/IT.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Italian flag with a border. 1`] = `
 <div
-  class="flag size-m border-radius border"
+  class="flag size-l border-radius border"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/IT.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/IT.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large Italian flag with no border radius. 1`] = `
 <div
-  class="flag size-m"
+  class="flag size-l border"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/IT.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/IT.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large US flag with a custom classname 1`] = `
 <div
-  class="flag size-m border-radius custom-flag-class"
+  class="flag size-l border-radius border custom-flag-class"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/US.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/US.svg?sanitize=true"
   />
 </div>
 `;
 
 exports[`Test the different props Should render a large US flag with drop shadow 1`] = `
 <div
-  class="flag size-m border-radius dropshadow"
+  class="flag size-l border-radius border dropshadow"
 >
   <img
-    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/m/US.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/Yummygum/flag-pack-core/master/svg/l/US.svg?sanitize=true"
   />
 </div>
 `;
