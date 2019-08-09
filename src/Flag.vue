@@ -6,7 +6,7 @@
       `size-${size}`,
       {'border-radius': hasBorderRadius },
       {'border': hasBorder },
-      {dropshadow},
+      {'dropshadow': hasDropshadow},
       gradient,
       className
     ]">
@@ -34,7 +34,7 @@ export default {
       required: true,
       default: '528'
     },
-    dropshadow: {
+    hasDropshadow: {
       type: Boolean,
       default: false
     },
