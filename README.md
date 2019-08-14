@@ -71,7 +71,7 @@ instance.use(Flag)
 | code |  String | true | none | see all codes |
 | size |  String | false | l | 's', 'm' or 'l' |
 | className |  String | false | - | - |
-| dropshadow |  boolean | false | false | - |
+| hasDropshadow |  boolean | false | false | - |
 | hasBorder |  boolean | false | true | - |
 | hasBorderRadius | boolean | false | true | - |
 | customBorderRadius |  String | false | - | - |
