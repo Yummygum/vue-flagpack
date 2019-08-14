@@ -12,7 +12,7 @@ assignees: ''
 ## Detailed Description
 <!--- Provide a detailed description of the change or addition you are proposing -->
 
-## Is your feature request related to a problem? Please describe.##
+## Is your feature request related to a problem? Please describe.
 <!--- Why is this change important to you? How would you use it? -->
 <!--- How can it benefit other users? -->
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
