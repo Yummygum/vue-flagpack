@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { isoToCountryCode } from 'flag-pack-core'
+import { isoToCountryCode } from 'flagpack-core'
 
 export default {
   name: 'Flag',
