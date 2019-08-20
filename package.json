@@ -1,5 +1,5 @@
 {
-  "name": "vue-flag-pack",
+  "name": "vue-flagpack",
   "description": "A Vue flag pack",
   "version": "0.2.13",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
@@ -75,6 +75,6 @@
     }
   ],
   "dependencies": {
-    "flag-pack-core": "0.0.32"
+    "flagpack-core": "0.0.33"
   }
 }
