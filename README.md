@@ -5,14 +5,14 @@
 ## Installation
 
 ```bash
-npm install vue-flag-pack
+npm install vue-flagpack
 ```
 
 ## Use
 Use as a plugin
 ```js
 import Vue from 'vue'
-import Flag from 'vue-flag-pack'
+import Flag from 'vue-flagpack'
 Vue.use(Flag, {
   name: 'Flag'
 })
@@ -27,7 +27,7 @@ Use in your template:
 
 Or import straight away
 ```js
-import { Flag } from 'vue-flag-pack'
+import { Flag } from 'vue-flagpack'
 
 Vue.component('flag-nl', {
   components: {
@@ -41,7 +41,7 @@ Vue.component('flag-nl', {
 
 Or use via UNPKG network
 ```html
-<script src="https://unpkg.com/vue-flag-pack@0.2.1/dist/vue-flag-rollup.iife.js"></script>
+<script src="https://unpkg.com/vue-flagpack@0.2.14/dist/vue-flag-rollup.iife.js"></script>
 <script>
 const instance = new Vue({
   el: '#app',
