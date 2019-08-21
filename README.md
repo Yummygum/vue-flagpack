@@ -41,7 +41,7 @@ Vue.component('flag-nl', {
 
 Or use via UNPKG network
 ```html
-<script src="https://unpkg.com/vue-flagpack@0.2.14/dist/vue-flag-rollup.iife.js"></script>
+<script src="https://unpkg.com/vue-flagpack@0.2.17/dist/vue-flag-rollup.iife.js"></script>
 <script>
 const instance = new Vue({
   el: '#app',
