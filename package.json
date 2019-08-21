@@ -29,7 +29,7 @@
     "dev": "rollup -cw",
     "build": "rm -rf dist && rollup -c",
     "test": "echo 'tests here'",
-    "prepublish": "npm test && npm version patch",
+    "//prepublish": "npm test && npm version patch",
     "publish": "npm run build && git add -A dist",
     "postpublish": "git push && git push --tags"
   },
@@ -75,6 +75,6 @@
     }
   ],
   "dependencies": {
-    "flagpack-core": "0.0.33"
+    "flagpack-core": "0.0.34"
   }
 }
