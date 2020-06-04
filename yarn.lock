@@ -2547,10 +2547,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-flagpack-core@^0.0.40:
-  version "0.0.41"
-  resolved "https://registry.yarnpkg.com/flagpack-core/-/flagpack-core-0.0.40.tgz#314f083ca86b159d6e612e955b585aed8c5b1195"
-  integrity sha512-RieHENwaYrxUmQUFqMN2QN95nA8zZyG5jY2iHYbllPpP0l+Pgxm3vEHc3Vjcrra5qXZWXr1UYTJgKmsCgwmMww==
+flagpack-core@0.0.42:
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/flagpack-core/-/flagpack-core-0.0.42.tgz#a72c429988f2e504e835dd6efae97a847f2fd337"
+  integrity sha512-CmN9orRyld6NV+WCMtcWkpEt/G9pBUauN1dmuDRjGru9i30zkXBHlirdk7GbPZkmiA4b+isVT2a1mBH2PKkXOQ==
 
 flatten@^1.0.2:
   version "1.0.3"
