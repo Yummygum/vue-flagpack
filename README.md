@@ -1,6 +1,10 @@
-# Vue Flag Pack
+# vue-flagpack
 
-> A project made by Yummygum
+Gorgeous flag icons for your digital product.
+
+[flagpack.xyz](https://flagpack.xyz)
+
+> A project made by [Yummygum](https://youtube.com)
 
 ## Installation
 
@@ -9,10 +13,11 @@ npm install vue-flagpack
 ```
 
 ## Use
-Use as a plugin
+As a plugin
 ```js
 import Vue from 'vue'
 import Flag from 'vue-flagpack'
+
 Vue.use(Flag, {
   name: 'Flag'
 })
@@ -21,7 +26,7 @@ Vue.use(Flag, {
 Use in your template:
 ```html
 <template>
-  <vue-flag-pack code="NL" />
+  <vue-flagpack code="NL" />
 </template>
 ```
 
@@ -41,7 +46,7 @@ Vue.component('flag-nl', {
 
 Or use via UNPKG network
 ```html
-<script src="https://unpkg.com/vue-flagpack@0.2.17/dist/vue-flag-rollup.iife.js"></script>
+<script src="https://unpkg.com/vue-flagpack@0.2.17/dist/vue-flag-rollup.cjs.js"></script>
 <script>
 const instance = new Vue({
   el: '#app',
@@ -60,7 +65,7 @@ instance.use(Flag)
 
 | key   | value   | required | default |
 |-------|-------|------|------|
-| name |  String | false | vue-flag-pack |
+| name |  String | false | vue-flagpack |
 
 
 
@@ -68,10 +73,10 @@ instance.use(Flag)
 
 | key   | value   | required | default | format |
 |-------|-------|------|------|------|
-| code |  String | true | none | see all codes |
+| code |  String | false | none | see all codes |
 | size |  String | false | l | 's', 'm' or 'l' |
 | className |  String | false | - | - |
-| hasDropshadow |  boolean | false | false | - |
+| hasDropShadow |  boolean | false | false | - |
 | hasBorder |  boolean | false | true | - |
 | hasBorderRadius | boolean | false | true | - |
 | customBorderRadius |  String | false | - | - |

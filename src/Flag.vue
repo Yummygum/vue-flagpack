@@ -1,16 +1,16 @@
 <template>
   <div
-    :style="{borderRadius: customBorderRadius}"
+    :style="[styles]"
     :class="[
       'flag',
       `size-${size}`,
       {'border-radius': hasBorderRadius },
       {'border': hasBorder },
-      {'dropshadow': hasDropshadow},
+      {'drop-shadow': hasDropShadow},
       gradient,
       className
     ]">
-    <img :src="imageUrl(isoToCountryCodeLocal.toUpperCase(), size.toLowerCase())">
+    <img :src="imageUrl">
   </div>
 </template>
 
@@ -20,23 +20,28 @@ import { isoToCountryCode, imageUrl } from 'flagpack-core'
 export default {
   name: 'Flag',
   computed: {
-    isoToCountryCodeLocal() {
-      return isoToCountryCode(this.code)
+    imageUrl() {
+      return imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
+    },
+    styles() {
+      return this.customBorderRadius && {'border-radius': `${this.customBorderRadius}px`}
     }
   },
   props: {
     size: {
       type: String,
       default: 'm',
+      validator: value => (
+        ['s', 'm', 'l'].indexOf(value) !== -1
+      ),
     },
     code: {
       type: String,
-      required: true,
       default: '528'
     },
-    hasDropshadow: {
+    hasDropShadow: {
       type: Boolean,
-      default: false
+      default: false,
     },
     hasBorder: {
       type: Boolean,
@@ -51,7 +56,9 @@ export default {
     },
     gradient: {
       type: String,
-      default: '',
+      validator: value => (
+        ['top-down', 'real-linear', 'real-circular'].indexOf(value) !== -1
+      ),
     },
     className: {
       type: String
@@ -61,6 +68,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@mixin before-styling {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  mix-blend-mode: overlay;
+}
+
 .flag {
   display: inline-block;
   overflow: hidden;
@@ -71,7 +87,7 @@ export default {
       width: 16px;
       height: 12px;
 
-      &.dropshadow {
+      &.drop-shadow {
         box-shadow: 0 0 1px 0.5px rgba(0,0,0,0.10);
       }
 
@@ -84,7 +100,7 @@ export default {
       width: 20px;
       height: 15px;
 
-      &.dropshadow {
+      &.drop-shadow {
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.10);
       }
 
@@ -97,7 +113,7 @@ export default {
       width: 32px;
       height: 24px;
 
-      &.dropshadow {
+      &.drop-shadow {
         box-shadow: 0 2px 3px 0 rgba(0,0,0,0.10);
       }
 
@@ -107,17 +123,9 @@ export default {
     }
   }
 
-  &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: block;
-    mix-blend-mode: overlay;
-  }
-
   &.border {
     &::before {
+      @include before-styling();
       width: calc(100% - 2px);
       height: calc(100% - 2px);
       border: 1px solid rgba(0, 0, 0, .5);
@@ -127,24 +135,28 @@ export default {
 
   &.border-radius {
     &::before {
+      @include before-styling();
       border-radius: 1px;
     }
   }
 
   &.top-down {
     &::before {
+      @include before-styling();
       background-image: linear-gradient(0deg, rgba(0,0,0,0.30) 2%, rgba(255,255,255,0.70) 100%);
     }
   }
 
   &.real-linear {
     &::before {
+      @include before-styling();
       background-image: linear-gradient(45deg, rgba(0,0,0,0.20) 0%, rgba(39,39,39,0.22) 11%, rgba(255,255,255,0.30) 27%, rgba(0,0,0,0.24) 41%, rgba(0,0,0,0.55) 52%, rgba(255,255,255,0.26) 63%, rgba(0,0,0,0.27) 74%, rgba(255,255,255,0.30) 100%);
     }
   }
 
   &.real-circular {
     &::before {
+      @include before-styling();
       background: radial-gradient(50% 36%, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.24) 11%, rgba(0,0,0,0.55) 17%, rgba(255,255,255,0.26) 22%, rgba(0,0,0,0.17) 27%, rgba(255,255,255,0.28) 31%, rgba(255,255,255,0.00) 37%) center calc(50% - 8px) / 600% 600%,
                   radial-gradient(50% 123%, rgba(255,255,255,0.30) 25%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.55) 61%, rgba(255,255,255,0.26) 72%, rgba(0,0,0,0.17) 80%, rgba(255,255,255,0.28) 88%, rgba(255,255,255,0.30) 100%) center calc(50% - 8px) / 600% 600%;
     }
@@ -152,6 +164,9 @@ export default {
 
   img {
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>

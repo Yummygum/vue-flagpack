@@ -1,6 +1,6 @@
 {
   "name": "vue-flagpack",
-  "description": "A Vue flag pack",
+  "description": "A Vue flagpack",
   "version": "0.2.18",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
   "repository": {
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Yummygum/vue-flag-pack/issues"
   },
-  "homepage": "https://github.com/Yummygum/vue-flag-pack/#readme",
+  "homepage": "https://flagpack.xyz",
   "scripts": {
     "dev": "rollup -cw",
     "build": "rm -rf dist && rollup -c",
@@ -75,6 +75,6 @@
     }
   ],
   "dependencies": {
-    "flagpack-core": "0.0.34"
+    "flagpack-core": "^0.0.41"
   }
 }
