@@ -1,11 +1,11 @@
 {
   "name": "vue-flagpack",
-  "description": "A Vue flagpack",
+  "description": "Gorgeous flag components for your Vue project.",
   "version": "0.2.27",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yummygum/vue-flag-pack.git"
+    "url": "git+https://github.com/Yummygum/vue-flagpack.git"
   },
   "keywords": [
     "vue",
@@ -22,7 +22,7 @@
   "main": "./dist/vue-flag-rollup.cjs.js",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Yummygum/vue-flag-pack/issues"
+    "url": "https://github.com/Yummygum/vue-flagpack/issues"
   },
   "homepage": "https://flagpack.xyz",
   "scripts": {
