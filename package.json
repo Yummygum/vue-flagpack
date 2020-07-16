@@ -1,7 +1,7 @@
 {
   "name": "vue-flagpack",
   "description": "A Vue flagpack",
-  "version": "0.2.27",
+  "version": "0.2.26",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
   "repository": {
     "type": "git",
@@ -27,11 +27,7 @@
   "homepage": "https://flagpack.xyz",
   "scripts": {
     "dev": "rollup -cw",
-    "build": "rm -rf dist && rollup -c",
-    "test": "echo 'tests here'",
-    "prepublish": "npm test && npm version patch",
-    "publish": "npm run build && git add -A dist",
-    "postpublish": "git push && git push --tags"
+    "build": "rm -rf dist && rollup -c"
   },
   "browserslist": [
     "> 1%",
@@ -43,9 +39,9 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
-    "copy-webpack-plugin": "^4.5.3",
+    "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^5.0.5",
-    "css-loader": "^0.28.7",
+    "css-loader": "^3.6.0",
     "file-loader": "^1.1.4",
     "node-sass": "^4.5.3",
     "rollup-plugin-commonjs": "^10.0.0",
@@ -54,8 +50,8 @@
     "vue": "2.5.11",
     "vue-loader": "13.0.5",
     "vue-template-compiler": "2.5.11",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "authors": [
     {
@@ -75,6 +71,6 @@
     }
   ],
   "dependencies": {
-    "flagpack-core": "0.0.42"
+    "flagpack-core": "0.0.43"
   }
 }
