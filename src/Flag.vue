@@ -22,9 +22,6 @@ export default {
   computed: {
     imageUrl() {
       return imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
-    },
-    styles() {
-      return this.customBorderRadius && {'border-radius': `${this.customBorderRadius}px`}
     }
   },
   props: {
@@ -45,14 +42,11 @@ export default {
     },
     hasBorder: {
       type: Boolean,
-      default: false
+      default: true
     },
     hasBorderRadius: {
       type: Boolean,
       default: true,
-    },
-    customBorderRadius: {
-      type: String,
     },
     gradient: {
       type: String,
@@ -75,12 +69,14 @@ export default {
   position: absolute;
   display: block;
   mix-blend-mode: overlay;
+  box-sizing: border-box;
 }
 
 .flag {
   display: inline-block;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 
   &.size {
     &-s {
