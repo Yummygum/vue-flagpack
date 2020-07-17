@@ -122,8 +122,6 @@ export default {
   &.border {
     &::before {
       @include before-styling();
-      width: calc(100% - 2px);
-      height: calc(100% - 2px);
       border: 1px solid rgba(0, 0, 0, .5);
       mix-blend-mode: overlay;
     }
