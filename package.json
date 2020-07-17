@@ -1,7 +1,7 @@
 {
   "name": "vue-flagpack",
   "description": "Gorgeous flag components for your Vue project.",
-  "version": "0.2.30",
+  "version": "0.2.31",
   "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
   "repository": {
     "type": "git",
