@@ -1,6 +1,5 @@
 <template>
   <div
-    :style="[styles]"
     :class="[
       'flag',
       `size-${size}`,
