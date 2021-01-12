@@ -19,8 +19,9 @@ import { isoToCountryCode, imageUrl } from 'flagpack-core'
 export default {
   name: 'Flag',
   computed: {
-    imageUrl() {
-      return imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
+    imageUrl () {
+      const url = imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
+      return url
     }
   },
   props: {

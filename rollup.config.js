@@ -1,15 +1,16 @@
 import commonjs from 'rollup-plugin-commonjs'
 import VuePlugin from 'rollup-plugin-vue'
-import { terser } from 'rollup-plugin-terser'
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 export default {
   input: 'src/main.js',
-  externals: ['vue', 'flagpack-core'],
   plugins: [
     commonjs(),
     VuePlugin(),
-    (process.env.NODE_ENV === 'production' && terser())
+    isProduction && (import('rollup-plugin-terser')).terser()
   ],
+  external: ['vue', 'flagpack-core'],
   output: [
     {
       file: 'dist/vue-flag-rollup.cjs.js',
@@ -22,7 +23,11 @@ export default {
     {
       file: 'dist/vue-flag-rollup.iife.js',
       format: 'iife',
-      name: 'Flag'
+      name: 'Flag',
+      globals: {
+        vue: 'Vue',
+        'flagpack-core': 'flagpackCore'
+      }
     }
   ]
 }
