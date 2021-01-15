@@ -1,15 +1,21 @@
 import commonjs from 'rollup-plugin-commonjs'
 import VuePlugin from 'rollup-plugin-vue'
+import { terser } from 'rollup-plugin-terser'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
+const plugins = [
+  commonjs(),
+  VuePlugin()
+]
+
+if (isProduction) {
+  plugins.push(terser())
+}
+
 export default {
   input: 'src/main.js',
-  plugins: [
-    commonjs(),
-    VuePlugin(),
-    isProduction && (import('rollup-plugin-terser')).terser()
-  ],
+  plugins,
   external: ['vue', 'flagpack-core'],
   output: [
     {
