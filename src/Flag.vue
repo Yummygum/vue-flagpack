@@ -2,11 +2,11 @@
   <div
     :class="[
       'flag',
-      `size-${size}`,
+      `size-${lowerSize}`,
       {'border-radius': hasBorderRadius },
       {'border': hasBorder },
       {'drop-shadow': hasDropShadow},
-      gradient,
+      lowerGradient,
       className
     ]">
     <img :src="imageUrl">
@@ -19,9 +19,15 @@ import { isoToCountryCode, imageUrl } from 'flagpack-core'
 export default {
   name: 'Flag',
   computed: {
-    imageUrl () {
+    imageUrl() {
       const url = imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
       return url
+    },
+    lowerSize() {
+      return this.size.toLowerCase()
+    },
+    lowerGradient() {
+      return this.gradient.toLowerCase()
     }
   },
   props: {
@@ -29,7 +35,7 @@ export default {
       type: String,
       default: 'm',
       validator: value => (
-        ['s', 'm', 'l'].indexOf(value) !== -1
+        ['s', 'm', 'l'].indexOf(value.toLowerCase()) !== -1
       ),
     },
     code: {
