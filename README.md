@@ -7,6 +7,20 @@ Flagpack contains 260+ flag icons to easily use within your code project. Flagpa
 [View documentation on flagpack.xyz](https://flagpack.xyz/docs/)
 
 ## vue-flagpack
+<p>
+  <a href="https://www.npmjs.com/package/vue-flagpack" target="_blank">
+    <img src="https://img.shields.io/npm/v/vue-flagpack.svg?style=flat" />
+  </a>
+  <a href="https://www.npmjs.com/package/vue-flagpack" target="_blank">
+    <img src="https://img.shields.io/npm/dt/vue-flagpack.svg?style=flat" />
+  </a>
+  <a href="https://github.com/yummygum/support" target="_blank">
+    <img src="https://img.shields.io/badge/Support-♥-E94AAA"  />
+  </a>
+  <a href="https://twitter.com/flagpack" target="_blank">
+    <img src="https://img.shields.io/twitter/follow/flagpack.svg?style=social&label=follow"  />
+  </a>
+</p>
 Flagpack for Vue is created using Vue v2.5.11. The Flagpack component has not been tested for compatibility with older version of Vue.
 
 ## Installation
