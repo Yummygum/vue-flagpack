@@ -23,6 +23,8 @@ Flagpack contains 260+ flag icons to easily use within your code project. Flagpa
 </p>
 Flagpack for Vue is created using Vue v2.5.11. The Flagpack component has not been tested for compatibility with older version of Vue.
 
+⚠ Flagpack for Vue has been reported to not work with Vue 3. Adding support for Vue 3 has been added to the future plans of Flagpack for Vue.
+
 ## Installation
 
 ```bash
