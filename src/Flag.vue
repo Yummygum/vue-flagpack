@@ -9,7 +9,7 @@
       gradient,
       className
     ]">
-    <img :src="imageUrl">
+    <img :src="require(`../dist/flags/${size}/${code}.svg`).default">
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   name: 'Flag',
   computed: {
     imageUrl () {
-      const url = imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
+      const url = require(`../dist/flags/${size}/${code}.svg`).default
       return url
     }
   },
