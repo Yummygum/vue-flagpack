@@ -22,7 +22,7 @@ export default {
       type: String,
       default: 'm',
       validator: value => (
-        ['s', 'm', 'l'].indexOf(value) !== -1
+        ['s', 'm', 'l'].indexOf(value.toLowerCase()) !== -1
       ),
     },
     code: {
