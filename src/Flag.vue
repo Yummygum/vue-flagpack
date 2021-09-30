@@ -2,14 +2,14 @@
   <div
     :class="[
       'flag',
-      `size-${size}`,
+      `size-${size.toLowerCase()}`,
       {'border-radius': hasBorderRadius },
       {'border': hasBorder },
       {'drop-shadow': hasDropShadow},
       gradient,
       className
     ]">
-    <img :src="require(`../dist/flags/${size}/${code}.svg`)">
+    <img :src="require(`../dist/flags/${size.toLowerCase()}/${code}.svg`)">
   </div>
 </template>
 
