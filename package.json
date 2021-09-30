@@ -73,5 +73,8 @@
       "social": "@yummygum",
       "url": "https://yummygum.com"
     }
-  ]
+  ],
+  "dependencies": {
+    "@rollup/plugin-image": "^2.1.1"
+  }
 }

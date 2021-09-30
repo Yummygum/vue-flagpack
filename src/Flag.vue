@@ -9,7 +9,7 @@
       gradient,
       className
     ]">
-    <img :src="require(`../dist/flags/m/NL.svg`).default">
+    <img :src="require(`../dist/flags/${size}/${code}.svg`)">
   </div>
 </template>
 
