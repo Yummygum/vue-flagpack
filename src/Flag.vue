@@ -9,21 +9,14 @@
       gradient,
       className
     ]">
-    <img :src="require(`../dist/flags/${size}/${code}.svg`).default">
+    <img :src="require(`../dist/flags/m/NL.svg`).default">
   </div>
 </template>
 
 <script>
-import { isoToCountryCode, imageUrl } from 'flagpack-core'
 
 export default {
   name: 'Flag',
-  computed: {
-    imageUrl () {
-      const url = require(`../dist/flags/${size}/${code}.svg`).default
-      return url
-    }
-  },
   props: {
     size: {
       type: String,
