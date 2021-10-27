@@ -9,7 +9,7 @@
       gradient,
       className
     ]">
-    <img :src="require(`../dist/flags/${size.toLowerCase()}/${code}.svg`)">
+    <img :src="getUrl(size, code)">
   </div>
 </template>
 
@@ -17,6 +17,11 @@
 
 export default {
   name: 'Flag',
+  methods: {
+    getUrl(size, code) {
+      return require.context(`../dist/flags/${size.toLowerCase()}/${code}.svg`)
+    }
+  },
   props: {
     size: {
       type: String,
