@@ -19,7 +19,7 @@ export default {
   name: 'Flag',
   methods: {
     getUrl(size, code) {
-      return require.context(`../dist/flags/${size.toLowerCase()}/${code}.svg`)
+      return require(`../dist/flags/${size.toLowerCase()}/${code}.svg`)
     }
   },
   props: {
