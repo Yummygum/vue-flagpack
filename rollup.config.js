@@ -21,21 +21,27 @@ export default {
   external: ['vue', 'flagpack-core'],
   output: [
     {
-      file: 'dist/vue-flag-rollup.cjs.js',
-      format: 'cjs'
+      // file: 'dist/vue-flag-rollup.cjs.js',
+      format: 'cjs',
+      exports: 'named',
+      dir: 'dist',
+      preserveModules: true,
     },
-    {
-      file: 'dist/vue-flag-rollup.esm.js',
-      format: 'esm'
-    },
-    {
-      file: 'dist/vue-flag-rollup.iife.js',
-      format: 'iife',
-      name: 'Flag',
-      globals: {
-        vue: 'Vue',
-        'flagpack-core': 'flagpackCore'
-      }
-    }
+    // {
+    //   file: 'dist/vue-flag-rollup.esm.js',
+    //   format: 'esm',
+    //   // dir: 'dist/',
+    //   // preserveModules: true,
+    // },
+    // {
+    //   file: 'dist/vue-flag-rollup.iife.js',
+    //   format: 'iife',
+    //   name: 'Flag',
+    //   globals: {
+    //     vue: 'Vue',
+    //     'flagpack-core': 'flagpackCore'
+    //   },
+    //   // preserveModules: true,
+    // }
   ]
 }

@@ -19,7 +19,7 @@
   "files": [
     "dist/*"
   ],
-  "main": "./dist/vue-flag-rollup.cjs.js",
+  "main": "./dist/src/main.js",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Yummygum/vue-flagpack/issues"

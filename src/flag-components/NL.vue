@@ -9,18 +9,27 @@
       gradient,
       className
     ]">
-    <img :src="getUrl(size, code)">
+    <img :src="getUrl(size.toLowerCase())">
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Flag',
+  name: 'NL',
   methods: {
-    getUrl(size, code) {
-      // return require(`../dist/flags/${size.toLowerCase()}/${code}.svg`)
-      return require(`../flags/${size.toLowerCase()}/${code}.svg`)
+    getUrl(size) {
+      if (size === 's') {
+        return require('./../../flags/s/NL.svg')
+      }
+
+      if (size === 'm') {
+        return require('./../../flags/m/NL.svg')
+      }
+
+      if (size === 'l') {
+        return require('./../../flags/l/NL.svg')
+      }
     }
   },
   props: {
@@ -30,10 +39,6 @@ export default {
       validator: value => (
         ['s', 'm', 'l'].indexOf(value.toLowerCase()) !== -1
       ),
-    },
-    code: {
-      type: String,
-      default: '528'
     },
     hasDropShadow: {
       type: Boolean,
