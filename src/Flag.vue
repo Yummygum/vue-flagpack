@@ -2,26 +2,25 @@
   <div
     :class="[
       'flag',
-      `size-${size}`,
+      `size-${size.toLowerCase()}`,
       {'border-radius': hasBorderRadius },
       {'border': hasBorder },
       {'drop-shadow': hasDropShadow},
       gradient,
       className
     ]">
-    <img :src="imageUrl">
+    <img :src="getUrl(size, code)">
   </div>
 </template>
 
 <script>
-import { isoToCountryCode, imageUrl } from 'flagpack-core'
 
 export default {
   name: 'Flag',
-  computed: {
-    imageUrl () {
-      const url = imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
-      return url
+  methods: {
+    getUrl(size, code) {
+      // return require(`../dist/flags/${size.toLowerCase()}/${code}.svg`)
+      return require(`../flags/${size.toLowerCase()}/${code}.svg`)
     }
   },
   props: {
@@ -29,7 +28,7 @@ export default {
       type: String,
       default: 'm',
       validator: value => (
-        ['s', 'm', 'l'].indexOf(value) !== -1
+        ['s', 'm', 'l'].indexOf(value.toLowerCase()) !== -1
       ),
     },
     code: {
