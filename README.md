@@ -9,21 +9,19 @@ Flagpack contains 260+ flag icons to easily use within your code project. Flagpa
 ## vue-flagpack
 <p>
   <a href="https://www.npmjs.com/package/vue-flagpack" target="_blank">
-    <img src="https://img.shields.io/npm/v/vue-flagpack.svg?style=flat" />
+    <img src="https://img.shields.io/npm/v/vue-flagpack.svg?style=flat" alt="" />
   </a>
   <a href="https://www.npmjs.com/package/vue-flagpack" target="_blank">
-    <img src="https://img.shields.io/npm/dt/vue-flagpack.svg?style=flat" />
+    <img src="https://img.shields.io/npm/dt/vue-flagpack.svg?style=flat" alt="" />
   </a>
   <a href="https://github.com/sponsors/Yummygum" target="_blank">
-    <img src="https://img.shields.io/badge/Support-♥-E94AAA"  />
+    <img src="https://img.shields.io/badge/Support-♥-E94AAA" alt=""  />
   </a>
   <a href="https://twitter.com/flagpack" target="_blank">
-    <img src="https://img.shields.io/twitter/follow/flagpack.svg?style=social&label=follow"  />
+    <img src="https://img.shields.io/twitter/follow/flagpack.svg?style=social&label=follow" alt="" />
   </a>
 </p>
-Flagpack for Vue is created using Vue v2.5.11. The Flagpack component has not been tested for compatibility with older version of Vue.
-
-⚠ Flagpack for Vue has been reported to not work with Vue 3. Adding support for Vue 3 has been added to the future plans of Flagpack for Vue.
+Flagpack for Vue now is supporting Vue 3.x, and recreated with ViteJS
 
 ## Installation
 
@@ -65,7 +63,7 @@ Vue.component('flag-nl', {
 
 ### Via UNPKG network
 ```html
-<script src="https://unpkg.com/vue-flagpack@latest/dist/vue-flag-rollup.cjs.js"></script>
+<script src="https://unpkg.com/vue-flagpack@latest/dist/vue-flag-rollup.cjs"></script>
 <script>
 const instance = new Vue({
   el: '#app',
@@ -109,9 +107,6 @@ npm install
 
 # build for prod
 npm run build
-
-# build with watcher for dev
-npm run dev
 ```
 
 ## Releasing
