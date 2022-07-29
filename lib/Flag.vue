@@ -27,7 +27,7 @@ export default defineComponent({
     size: {
       type: String,
       default: 'm',
-      validator: (value: string): boolean => ['s', 'm', 'l'].indexOf(value) !== -1
+      validator: (value: string): boolean => ['s', 'm', 'l'].indexOf(value.toLowerCase()) !== -1
     },
     code: {
       type: String,
@@ -47,7 +47,7 @@ export default defineComponent({
     },
     gradient: {
       type: String,
-      validator: (value: string): boolean => ['top-down', 'real-linear', 'real-circular'].indexOf(value) !== -1
+      validator: (value: string): boolean => ['top-down', 'real-linear', 'real-circular'].indexOf(value.toLowerCase()) !== -1
     },
     className: String
   }
