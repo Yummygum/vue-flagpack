@@ -1,7 +1,52 @@
 {
   "name": "vue-flagpack",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Gorgeous flag components for your Vue project.",
+  "version": "1.0.1",
+  "author": "Yummygum <info@yummygum.com> (https://yummygum.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yummygum/vue-flagpack.git"
+  },
+  "keywords": [
+    "vue",
+    "vue-component",
+    "languages",
+    "flag",
+    "iso",
+    "flag set",
+    "countries"
+  ],
+  "files": [
+    "dist/*"
+  ],
+  "main": "./dist/vue-flag-rollup.cjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yummygum/vue-flagpack/issues"
+  },
+  "homepage": "https://flagpack.xyz",
+  "authors": [
+    {
+      "name": "Noud Adrichem",
+      "social": "@noudadrichem",
+      "url": "https://noudadrichem.com"
+    },
+    {
+      "name": "Donovan Roubos",
+      "social": "@donovanroubos",
+      "url": "https://donovanroubos.nl"
+    },
+    {
+      "name": "Yummygum",
+      "social": "@yummygum",
+      "url": "https://yummygum.com"
+    },
+    {
+      "name": "Nazar Niphone",
+      "social": "@nazar_1_ua",
+      "url": "https://github.com/nazar1ua"
+    }
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +54,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "flagpack-core": "^2.0.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@types/node": "^18.6.2",
     "@vitejs/plugin-vue": "^3.0.0",
+    "path": "^0.12.7",
+    "sass": "^1.54.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vue-tsc": "^0.38.4"
