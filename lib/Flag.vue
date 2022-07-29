@@ -1,6 +1,5 @@
 <template>
-  <div
-    :class="[
+  <div :class="[
       'flag',
       `size-${size}`,
       {'border-radius': hasBorderRadius },
@@ -8,29 +7,27 @@
       {'drop-shadow': hasDropShadow},
       gradient,
       className
-    ]">
-    <img :src="imageUrl">
+  ]">
+    <img :src="imageUrl" :alt="code">
   </div>
 </template>
 
-<script>
-import { isoToCountryCode, imageUrl } from 'flagpack-core'
+<script lang="ts">
+import {defineComponent} from 'vue'
+import {isoToCountryCode} from 'flagpack-core'
 
-export default {
-  name: 'Flag',
+export default defineComponent({
+  name: "Flag",
   computed: {
-    imageUrl () {
-      const url = imageUrl(isoToCountryCode(this.code).toUpperCase(), this.size.toLowerCase())
-      return url
+    imageUrl(): string {
+      return require(`flagpack-core/svg/${this.size.toLowerCase()}/${isoToCountryCode(this.code).toUpperCase()}.svg`)
     }
   },
   props: {
     size: {
       type: String,
       default: 'm',
-      validator: value => (
-        ['s', 'm', 'l'].indexOf(value) !== -1
-      ),
+      validator: (value: string): boolean => ['s', 'm', 'l'].indexOf(value.toLowerCase()) !== -1
     },
     code: {
       type: String,
@@ -38,7 +35,7 @@ export default {
     },
     hasDropShadow: {
       type: Boolean,
-      default: false,
+      default: false
     },
     hasBorder: {
       type: Boolean,
@@ -46,19 +43,15 @@ export default {
     },
     hasBorderRadius: {
       type: Boolean,
-      default: true,
+      default: true
     },
     gradient: {
       type: String,
-      validator: value => (
-        ['top-down', 'real-linear', 'real-circular'].indexOf(value) !== -1
-      ),
+      validator: (value: string): boolean => ['top-down', 'real-linear', 'real-circular'].indexOf(value.toLowerCase()) !== -1
     },
-    className: {
-      type: String
-    }
-  },
-}
+    className: String
+  }
+})
 </script>
 
 <style scoped lang="scss">
@@ -152,7 +145,7 @@ export default {
     &::before {
       @include before-styling();
       background: radial-gradient(50% 36%, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.24) 11%, rgba(0,0,0,0.55) 17%, rgba(255,255,255,0.26) 22%, rgba(0,0,0,0.17) 27%, rgba(255,255,255,0.28) 31%, rgba(255,255,255,0.00) 37%) center calc(50% - 8px) / 600% 600%,
-                  radial-gradient(50% 123%, rgba(255,255,255,0.30) 25%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.55) 61%, rgba(255,255,255,0.26) 72%, rgba(0,0,0,0.17) 80%, rgba(255,255,255,0.28) 88%, rgba(255,255,255,0.30) 100%) center calc(50% - 8px) / 600% 600%;
+      radial-gradient(50% 123%, rgba(255,255,255,0.30) 25%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.55) 61%, rgba(255,255,255,0.26) 72%, rgba(0,0,0,0.17) 80%, rgba(255,255,255,0.28) 88%, rgba(255,255,255,0.30) 100%) center calc(50% - 8px) / 600% 600%;
     }
   }
 
